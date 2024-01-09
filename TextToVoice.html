@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Easily convert your written text into natural sounding voice in up to 50 different languages and/or accents. Download as MP3 or listen to it.">
+    <title>Free Text-To-Voice for 48+ languages | Textspe.shop</title>
+
+</head>
+<body>
+
+<div id="header">
+
+    <a href="/">
+        <img alt="Textspe.shop LOGO" width="300" height="100" src="images/logo2.jpg"/>
+    </a>
+
+
+</div>
+<div id="body">
+    <h1>Free Text-Translate and Text-To-Voice for 48+ language</h1>
+
+    <div style="text-align:left;" id="introtext">
+
+
+        <p>Easily convert your <strong>Text</strong> text into professional speech for free. Perfect for e-learning,
+            presentations, YouTube videos and increasing the accessibility of your website. Our voices pronounce your
+            texts in their own language using a specific accent. In some languages, multiple speakers are available.
+        </p>
+
+
+    </div>
+    <div id="featured">
+
+        <div class="test">
+            <div style="display: flex;width: 100%;justify-content: space-between">
+                <textarea maxlength="3000" id="text-input" placeholder="Enter text here" class="b_form"></textarea>
+                <textarea maxlength="3000" id="text-input2" placeholder="" class="b_form"
+                          readonly></textarea>
+            </div>
+            sourceText:
+            <select id="language-select">
+                <option value='ar'>Arabic</option>
+                <option value='bg'>Bulgarian</option>
+                <option value='ca'>Catalan</option>
+                <option value='zh-Hans_CN'>Chinese (Simplified)</option>
+                <option value='hr'>Croatian</option>
+                <option value='cs'>Czech</option>
+                <option value='da'>Danish</option>
+                <option value='nl'>Dutch</option>
+                <option value='nl'>Dutch</option>
+                <option value='en'>English</option>
+                <option value='fi'>Finnish</option>
+                <option value='fr'>French</option>
+                <option value='de'>German</option>
+                <option value='el'>Greek</option>
+                <option value='he'>Hebrew</option>
+                <option value='hi'>Hindi</option>
+                <option value='hu'>Hungarian</option>
+                <option value='id'>Indonesian</option>
+                <option value='it'>Italian</option>
+                <option value='ja'>Japanese</option>
+                <option value='ko'>Korean</option>
+                <option value='ms'>Malay</option>
+                <option value='no'>Norwegian</option>
+                <option value='pl'>Polish</option>
+                <option value='pt'>Portuguese</option>
+                <option value='ro'>Romanian</option>
+                <option value='ru'>Russian</option>
+                <option value='sk'>Slovak</option>
+                <option value='sl'>Slovenian</option>
+                <option value='es'>Spanish</option>
+                <option value='es'>Spanish</option>
+                <option value='sv'>Swedish</option>
+                <option value='ta'>Tamil</option>
+                <option value='th'>Thai</option>
+                <option value='tr'>Turkish</option>
+                <option value='vi'>Vietnamese</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;>>>&nbsp;&nbsp;&nbsp; targetVoice:
+            <select id="voice-select">
+                <option value='ar-eg'>Arabic (Egypt)</option>
+                <option value='ar-sa'>Arabic (Saudi Arabia)</option>
+                <option value='bg-bg'>Bulgarian</option>
+                <option value='ca-es'>Catalan</option>
+                <option value='zh-cn'>Chinese (China)</option>
+                <option value='zh-hk'>Chinese (Hong Kong）</option>
+                <option value='zh-tw'>Chinese (Taiwan)</option>
+                <option value='hr-hr'>Croatian</option>
+                <option value='cs-cz'>Czech</option>
+                <option value='da-dk'>Danish</option>
+                <option value='nl-be'>Dutch (Belgium)</option>
+                <option value='nl-nl'>Dutch (Netherlands)</option>
+                <option value='en-au'>English (Australia)</option>
+                <option value='en-ca'>English (Canada)</option>
+                <option value='en-gb'>English (Great Britain)</option>
+                <option value='en-in'>English (India)</option>
+                <option value='en-ie'>English (Ireland)</option>
+                <option value='en-us'>English (United States)</option>
+                <option value='fi-fi'>Finnish</option>
+                <option value='fr-ca'>French (Canada)</option>
+                <option value='fr-fr'>French (France)</option>
+                <option value='fr-ch'>French (Switzerland)</option>
+                <option value='de-at'>German (Austria)</option>
+                <option value='de-de'>German (Germany)</option>
+                <option value='de-ch'>German (Switzerland)</option>
+                <option value='el-gr'>Greek</option>
+                <option value='he-il'>Hebrew</option>
+                <option value='hi-in'>Hindi</option>
+                <option value='hu-hu'>Hungarian</option>
+                <option value='id-id'>Indonesian</option>
+                <option value='it-it'>Italian</option>
+                <option value='ja-jp'>Japanese</option>
+                <option value='ko-kr'>Korean</option>
+                <option value='ms-my'>Malay</option>
+                <option value='nb-no'>Norwegian</option>
+                <option value='pl-pl'>Polish</option>
+                <option value='pt-br'>Portuguese (Brazil)</option>
+                <option value='pt-pt'>Portuguese (Portugal)</option>
+                <option value='ro-ro'>Romanian</option>
+                <option value='ru-ru'>Russian</option>
+                <option value='sk-sk'>Slovak</option>
+                <option value='sl-si'>Slovenian</option>
+                <option value='es-mx'>Spanish (Mexico)</option>
+                <option value='es-es'>Spanish (Spain)</option>
+                <option value='sv-se'>Swedish</option>
+                <option value='ta-in'>Tamil</option>
+                <option value='th-th'>Thai</option>
+                <option value='tr-tr'>Turkish</option>
+                <option value='vi-vn'>Vietnamese</option>
+            </select>
+            <!-- translate and speak -->
+            <button id="translate-speak-btn">Translate and Speak</button>
+            <!--audio player -->
+            <audio id="audio-player" controls style="display:none"></audio>
+            <!--			<input id="downloadenbutton" class="subbuttons" type="submit" value="Download as MP3" />-->
+            <!--            <div style="clear:both;"></div>-->
+            <p id="limitannounce">
+            </p>
+        </div>
+
+    </div>
+
+    <div style='border: 2px solid #ccc; width: 350px; padding: 10px; display: none;' id='s3loader'>
+        <p style='font-weight: bold;'>Woah, that is quite some text... </p>
+        <p>Please give us a moment to process your request...</p>
+        <img style='border: none;' width='200' data-src='images/loader.gif'/>
+    </div>
+    <p> Don't forget to turn on your speakers :-)</p>
+    <p> Hint: If you finish a sentence, leave a space after the dot before the next one starts for better
+        pronunciation.</p>
+
+
+    <br/>
+    <!--    <div style="text-align: justify; width: 70%; padding: 30px; border: 2px solid #cecece; padding-top: 10px; margin-top: 5px;">-->
+    <!--        <h3>Here are some features to use while generating speech:</h3>-->
+
+    <!--        <h4>Add a break</h4>-->
+    <!--        Mary had a little lamb &lt;break time="1s"/&gt; Whose fleece was white as snow.-->
+
+    <!--        <h4>Emphasizing words</h4>-->
+    <!--        I already told you I &lt;emphasis level="strong"&gt;really like &lt;/emphasis&gt; that person.-->
+
+    <!--        <h4>Speed</h4>-->
+    <!--        For dramatic purposes, you might wish to &lt;prosody rate="slow"&gt;slow down the speaking rate of your text.&lt;/prosody&gt;-->
+    <!--        <br/>-->
+    <!--        Or if you are in a hurry &lt;prosody rate="fast"&gt;your may want to speed it up a bit.&lt;/prosody&gt;-->
+
+    <!--        <h4>Pitch</h4>-->
+    <!--        Do you like sythesized speech &lt;prosody pitch="high"&gt;with a pitch that is higher than normal?&lt;/prosody&gt;-->
+    <!--        <br/>-->
+    <!--        Or do you prefer your speech &lt;prosody pitch="-20%"&gt;with a somewhat lower pitch?&lt;/prosody&gt;-->
+
+    <!--        <h4>Whisper</h4>-->
+    <!--        &lt;amazon:effect name="whispered"&gt;If you make any noise, &lt;/amazon:effect&gt; she said, &lt;amazon:effect-->
+    <!--        name="whispered"&gt;they will hear us.&lt;/amazon:effect&gt;-->
+
+    <!--        <h4>Conversations</h4>-->
+    <!--        It is possible to switch between speakers within the text. Just use the following format:-->
+    <!--        <br/>-->
+    <!--        [speaker:Brian] Hello Emma-->
+    <!--        <br/>-->
+    <!--        [speaker:Emma] Hey Brian-->
+    <!--        <br/>-->
+    <!--        [speaker:Brian] How are you doing?-->
+    <!--        <br/>-->
+    <!--        [speaker:Emma] I am fine. May i invite you to a cup of tea?-->
+    <!--        <br/>-->
+    <!--        <p>Please note: Remove any diacritical signs from the speakers names when using this, Léa = Lea, Penélope =-->
+    <!--            Penelope</p>-->
+    <!--        <br/>-->
+    <!--        <br/>-->
+    <!--        <p>-->
+    <!--        <h4>Need more effects or customization? Please refer to the <a target="_blank"-->
+    <!--                                                                       href="https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html">Amazon-->
+    <!--            SSML Tags for Amazon Polly</a>-->
+    <!--        </h4>-->
+    <!--        </p>-->
+    <!--    </div>-->
+    <br/>
+    <div style="text-align: justify; width: 70%; padding: 30px; border: 2px solid #cecece; padding-top: 10px; margin-top: 5px;">
+        <h3>Overview of the Text-to-Speech Tool Website:</h3>
+        <p>
+        <ul>
+            <li>Supports Over 30 Text Input Languages: Your tool can receive and process texts in a wide range of
+                languages, catering to a global audience.
+            </li>
+            <li>Generates Speech in Over 48 Languages: This extensive language support for speech generation makes the
+                tool highly versatile on a global scale.
+            </li>
+            <li>Addresses Challenges and Complexities of Different Languages: The tool not only supports major languages
+                but also accounts for the unique aspects of various languages, such as pronunciation, intonation, and
+                grammatical differences.
+            </li>
+            <li>Bridging Communication and Learning: The tool serves not just as a translator, but as a platform to help
+                users understand, learn, and communicate in different languages.
+            </li>
+            <li>Applicable in Multiple Scenarios: Whether it's for language learners, international business
+                professionals, or users in multilingual environments, this tool meets their diverse needs.
+            </li>
+            <li>Powered by Technology: Utilizing the latest in voice synthesis and artificial intelligence technology,
+                the tool provides users with a smooth and natural voice experience.
+            </li>
+        </ul>
+        </p>
+
+        <!--        <h3>Facts about the US English language:</h3>-->
+        <!--        <p>-->
+        <!--        <p>English was brought to Britain in the mid 5th to 7th centuries. If you were to ask those who don't speak-->
+        <!--            English whether or not it's a hard language to learn, you'd likely get more than a few who insist that it is-->
+        <!--            among the hardest.</p>-->
+
+        <!--        <p>Though, it can be argued that English is easy since it has no gender, no word agreement, and no cases. Yet,-->
+        <!--            it does have words such as through, threw, and thru, all sounds the same, but are spelled differently, and-->
+        <!--            can't be used interchangeably.</p>-->
+
+        <!--        <p>English also has polish, and Polish. One is used to make furniture shine, while the other is a language. Or-->
+        <!--            take resume and resume, one is used when you're filling out job applications, and the other is used when you-->
+        <!--            want to tell someone to carry on with what they're doing.</p>-->
+
+        <!--        <p>As you can see above, the English language can be challenging, however, it's far from the most difficult-->
+        <!--            language to learn. With a bit of study, and some practice, almost anyone can learn English. One of the best-->
+        <!--            ways to learn the language is to find a friend who speaks English, and is willing to have conversations with-->
+        <!--            you. This will help you immerse yourself in the language and pick up on the nuances, and speech patterns of-->
+        <!--            English. With a bit of practice, you'll soon be speaking English like it's your native language. </p>-->
+        <!--        </p>-->
+    </div>
+    <div style="text-align: justify; width: 70%; padding: 30px; border: 2px solid #cecece; padding-top: 10px; margin-top: 15px;">
+        <h3>Supported text languages: </h3>
+
+        <a href='javascript:void(0);' onclick="languageSelect('ar')">
+            <div class='langbox'>Arabic</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('bg')">
+            <div class='langbox'>Bulgarian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ca')">
+            <div class='langbox'>Catalan</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('zh-Hans_CN')">
+            <div class='langbox'>Chinese (Simplified)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('hr')">
+            <div class='langbox'>Croatian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('cs')">
+            <div class='langbox'>Czech</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('da')">
+            <div class='langbox'>Danish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('nl')">
+            <div class='langbox'>Dutch</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('nl')">
+            <div class='langbox'>Dutch</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('en')">
+            <div class='langbox'>English</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('fi')">
+            <div class='langbox'>Finnish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('fr')">
+            <div class='langbox'>French</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('de')">
+            <div class='langbox'>German</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('el')">
+            <div class='langbox'>Greek</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('he')">
+            <div class='langbox'>Hebrew</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('hi')">
+            <div class='langbox'>Hindi</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('hu')">
+            <div class='langbox'>Hungarian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('id')">
+            <div class='langbox'>Indonesian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('it')">
+            <div class='langbox'>Italian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ja')">
+            <div class='langbox'>Japanese</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ko')">
+            <div class='langbox'>Korean</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ms')">
+            <div class='langbox'>Malay</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('no')">
+            <div class='langbox'>Norwegian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('pl')">
+            <div class='langbox'>Polish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('pt')">
+            <div class='langbox'>Portuguese</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ro')">
+            <div class='langbox'>Romanian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ru')">
+            <div class='langbox'>Russian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('sk')">
+            <div class='langbox'>Slovak</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('sl')">
+            <div class='langbox'>Slovenian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('es')">
+            <div class='langbox'>Spanish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('es')">
+            <div class='langbox'>Spanish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('sv')">
+            <div class='langbox'>Swedish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ta')">
+            <div class='langbox'>Tamil</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('th')">
+            <div class='langbox'>Thai</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('tr')">
+            <div class='langbox'>Turkish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('vi')">
+            <div class='langbox'>Vietnamese</div>
+        </a>
+
+    </div>
+    <div style="text-align: justify; width: 70%; padding: 30px; border: 2px solid #cecece; padding-top: 10px; margin-top: 15px;">
+        <h3>Supported voice languages: </h3>
+
+        <a href='javascript:void(0);' onclick="voiceSelect('ar-eg')">
+            <div class='langbox'>Arabic (Egypt)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ar-sa')">
+            <div class='langbox'>Arabic (Saudi Arabia)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('bg-bg')">
+            <div class='langbox'>Bulgarian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="languageSelect('ca-es')">
+            <div class='langbox'>Catalan</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('zh-cn')">
+            <div class='langbox'>Chinese (China)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('zh-cn')">
+            <div class='langbox'>Chinese (Hong Kong）</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('zh-cn')">
+            <div class='langbox'>Chinese (Taiwan)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('hr-hr')">
+            <div class='langbox'>Croatian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('cs-cz')">
+            <div class='langbox'>Czech</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('da-dk')">
+            <div class='langbox'>Danish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('nl-be')">
+            <div class='langbox'>Dutch (Belgium)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('nl-nl')">
+            <div class='langbox'>Dutch (Netherlands)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('en-au')">
+            <div class='langbox'>English (Australia)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('en-ca')">
+            <div class='langbox'>English (Canada)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('en-gb')">
+            <div class='langbox'>English (Great Britain)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('en-in')">
+            <div class='langbox'>English (India)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('en-ie')">
+            <div class='langbox'>English (Ireland)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('en-us')">
+            <div class='langbox'>English (United States)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('fi-fi')">
+            <div class='langbox'>Finnish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('fr-ca')">
+            <div class='langbox'>French (Canada)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('fr-fr')">
+            <div class='langbox'>French (France)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('fr-ch')">
+            <div class='langbox'>French (Switzerland)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('de-at')">
+            <div class='langbox'>German (Austria)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('de-de')">
+            <div class='langbox'>German (Germany)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('de-ch')">
+            <div class='langbox'>German (Switzerland)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('el-gr')">
+            <div class='langbox'>Greek</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('he-il')">
+            <div class='langbox'>Hebrew</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('hi-in')">
+            <div class='langbox'>Hindi</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('hu-hu')">
+            <div class='langbox'>Hungarian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('id-id')">
+            <div class='langbox'>Indonesian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('it-it')">
+            <div class='langbox'>Italian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ja-jp')">
+            <div class='langbox'>Japanese</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ko-kr')">
+            <div class='langbox'>Korean</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ms-my')">
+            <div class='langbox'>Malay</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('nb-no')">
+            <div class='langbox'>Norwegian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('pl-pl')">
+            <div class='langbox'>Polish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('pt-br')">
+            <div class='langbox'>Portuguese (Brazil)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('pt-pt')">
+            <div class='langbox'>Portuguese (Portugal)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ro-ro')">
+            <div class='langbox'>Romanian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ru-ru')">
+            <div class='langbox'>Russian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('sk-sk')">
+            <div class='langbox'>Slovak</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('sl-si')">
+            <div class='langbox'>Slovenian</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('es-mx')">
+            <div class='langbox'>Spanish (Mexico)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('es-es')">
+            <div class='langbox'>Spanish (Spain)</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('sv-se')">
+            <div class='langbox'>Swedish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('ta-in')">
+            <div class='langbox'>Tamil</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('th-th')">
+            <div class='langbox'>Thai</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('tr-tr')">
+            <div class='langbox'>Turkish</div>
+        </a>
+        <a href='javascript:void(0);' onclick="voiceSelect('vi-vn')">
+            <div class='langbox'>Vietnamese</div>
+        </a>
+    </div>
+
+    <div style="text-align: justify; width: 70%; padding: 30px; border: 2px solid #cecece; padding-top: 10px; margin-top: 15px;">
+        <h3>Are you looking for free speech-to-text conversion?</h3>
+        <p>If you are looking for ways to convert your spoken audio files from US English to written text, check out our
+            partner-website <a target="_blank" href="https://convertspeech.com">ConvertSpeech.com</a>
+        </p>
+        <div style="background: black; width: 240px; padding:0px; margin: 0px; margin-top:5px; margin-left: 15px;">
+            <a target="_blank" href="https://voicerss.org/">
+                <img alt="voicerss partner logo" style="margin: 0px; padding: 10px;" width="200" height="50"
+                     src="./images/voicerss-logo.png"/>
+            </a>
+        </div>
+    </div>
+
+    <br/>
+    <!--    <p>Current Limit: ~375 words or 3,000 characters / day | Powered by AWS Polly</p>-->
+<!--        <p>Get in touch? Mail us:-->
+<!--            <br/>-->
+<!--            <img alt="mail contact" width="200" height="30" src="./images/mail.png"/>-->
+<!--        </p>-->
+    <!--    <p>Need to convert more text to speech? <a href="/register?click=direct">Register here</a> for a 24 hour premium-->
+    <!--        access.</p>-->
+</div>
+
+<!--<div id="footer">-->
+<!--    <div>-->
+<!--        <p>&copy; 2024 ttsMP3.com | <a class="botlink" rel="nofollow" href="/faq">FAQ</a> | <a class="botlink"-->
+<!--                                                                                               rel="nofollow"-->
+<!--                                                                                               href="/privacypolicy">Privacy-->
+<!--            Policy</a> | <a class="botlink" rel="nofollow" href="/tos">Terms of Service</a> | <a class="botlink"-->
+<!--                                                                                                 rel="nofollow"-->
+<!--                                                                                                 href="/apidoc">API-->
+<!--            Documentation</a>-->
+<!--        </p>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+
+</body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-H0XGBVF70F"></script>-->
+<!--<script>-->
+<!--	window.dataLayer = window.dataLayer || [];-->
+<!--	function gtag(){dataLayer.push(arguments);}-->
+<!--	gtag('js', new Date());-->
+
+<!--	gtag('config', 'G-H0XGBVF70F');-->
+<!--</script>-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2908655618540976"
+        crossorigin="anonymous"></script>
+<script async src="./js/jquery-3.3.1.min.js"></script>
+<!--<script async type="text/javascript" src="./js/FileSaver.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="./css/style.css?v6">
+<link rel="stylesheet" type="text/css" href="./css/mobile.css?v8" media="screen and (max-width : 568px)">
+
+<script type="text/javascript">
+    // (() => {
+    //     var text = document.getElementById('text-input').value;
+    //     var targetLanguage = document.getElementById('language-select').value;
+    //     // 翻译文本
+    //     translateText(text, targetLanguage)
+    //         .then(translatedText => {
+    //             // 将翻译后的文本转换为语音并播放
+    //
+    //             // textToSpeech(translatedText, 'en-ie');
+    //             textToSpeech(translatedText, 'es-mx');
+    //             // textToSpeech(translatedText, targetLanguage);
+    //         });
+    // })();
+
+
+    // function dontsubmit() {
+    //     var text = document.getElementById('text-input').value;
+    //     var targetLanguage = document.getElementById('language-select').value;
+    //     // 翻译文本
+    //     translateText(text, targetLanguage)
+    //         .then(translatedText => {
+    //             // 将翻译后的文本转换为语音并播放
+    //
+    //             // textToSpeech(translatedText, 'en-ie');
+    //             textToSpeech(translatedText, 'es-mx');
+    //             // textToSpeech(translatedText, targetLanguage);
+    //         });
+    // }
+    var myMap = new Map([
+        ['ar-eg', 'ar'],
+        ['ar-sa', 'ar'],
+        ['bg-bg', 'bg'],
+        ['ca-es', 'ca'],
+        ['zh-cn', 'zh-Hans_CN'],
+        ['zh-cn', 'zh-Hans_CN'],
+        ['zh-cn', 'zh-Hans_CN'],
+        ['hr-hr', 'hr'],
+        ['cs-cz', 'cs'],
+        ['da-dk', 'da'],
+        ['nl-be', 'nl'],
+        ['nl-nl', 'nl'],
+        ['en-au', 'en'],
+        ['en-ca', 'en'],
+        ['en-gb', 'en'],
+        ['en-in', 'en'],
+        ['en-ie', 'en'],
+        ['en-us', 'en'],
+        ['fi-fi', 'fi'],
+        ['fr-ca', 'fr'],
+        ['fr-fr', 'fr'],
+        ['fr-ch', 'fr'],
+        ['de-at', 'de'],
+        ['de-de', 'de'],
+        ['de-ch', 'de'],
+        ['el-gr', 'el'],
+        ['he-il', 'he'],
+        ['hi-in', 'hi'],
+        ['hu-hu', 'hu'],
+        ['id-id', 'id'],
+        ['it-it', 'it'],
+        ['ja-jp', 'ja'],
+        ['ko-kr', 'ko'],
+        ['ms-my', 'ms'],
+        ['nb-no', 'no'],
+        ['pl-pl', 'pl'],
+        ['pt-br', 'pt'],
+        ['pt-pt', 'pt'],
+        ['ro-ro', 'ro'],
+        ['ru-ru', 'ru'],
+        ['sk-sk', 'sk'],
+        ['sl-si', 'sl'],
+        ['es-mx', 'es'],
+        ['es-es', 'es'],
+        ['sv-se', 'sv'],
+        ['ta-in', 'ta'],
+        ['th-th', 'th'],
+        ['tr-tr', 'tr'],
+        ['vi-vn', 'vi']
+    ]);
+    document.getElementById('translate-speak-btn').addEventListener('click', function () {
+
+        let text = document.getElementById('text-input').value;
+        let textLanguage = document.getElementById('language-select').value;
+        let voiceLanguage = document.getElementById('voice-select').value;
+        let targetLanguage = myMap.get(voiceLanguage)
+        // 翻译文本
+        translateText(text, textLanguage, targetLanguage)
+            .then(translatedText => {
+                // 将翻译后的文本转换为语音并播放
+
+                // textToSpeech(translatedText, 'en-ie');
+                // textToSpeech(translatedText, 'es-mx');
+                textToSpeech(translatedText, voiceLanguage);
+            });
+    });
+
+    // 翻译文本的函数
+    async function translateText(text, sourceLanguage, targetLanguage) {
+        const response = await fetch('https://api-b2b.backenster.com/b1/api/v3/translate', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'a_QByE2cxHAAvxWiojaLtgCmJAifwcZVpvU1UQPYc4FD7P2jnu4GDnmTEa611LqPonWxTejPUxXgaVEZAb',
+                'accept': 'application/json',
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                from: sourceLanguage,
+                to: targetLanguage,
+                // to: 'es',
+                data: text,
+                platform: 'api'
+            })
+        });
+        const data = await response.json();
+        document.getElementById("text-input2").value = data.result
+        return data.result; // 返回翻译后的文本
+    }
+
+    // 将文本转换为语音的函数
+    function textToSpeech(text, language) {
+        const encodedText = encodeURIComponent(text);
+        const audioUrl = `https://api.voicerss.org/?key=eb5f8fee22fc422d9f5d13b51b48ab04&hl=${language}&src=${encodedText}`;
+
+        var audioPlayer = document.getElementById('audio-player');
+        audioPlayer.src = audioUrl;
+        audioPlayer.play();
+    }
+
+    function voiceSelect(language) {
+        let select = document.getElementById('voice-select')
+        for (let i = 0; i < select.options.length; i++) {
+            console.log(select.options[i].value + "  " + select.options[i].text)
+            if (select.options[i].value == language) {
+                select.options[i].selected = true
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                // break;
+            }
+        }
+    }
+
+    function languageSelect(language) {
+        let select = document.getElementById('language-select')
+        for (let i = 0; i < select.options.length; i++) {
+            console.log(select.options[i].value + "  " + select.options[i].text)
+            if (select.options[i].value == language) {
+                select.options[i].selected = true
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+                // break;
+            }
+        }
+    }
+
+</script>
+
+
+</html>
